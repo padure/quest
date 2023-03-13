@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarcina 2</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        body {
+            height: 100vh;
+            background-color: brown;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .mb-3{
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+            gap: 15px;
+        }
+        label{
+            color: white;
+            font-size: 2rem;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+        }
+        button{
+            display: block;
+            width: 100%;
+            padding: 7px 10px;
+            background-color: white;
+            color: brown;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            border: 1px solid brown;
+            font-weight: bold;
+        }
+        button:active{
+            transform: scale(0.99);
+        }
+        button:hover{
+            cursor: pointer;
+            background-color: rgb(253, 227, 227);
+        }
+        input{
+            padding: 7px 15px;
+            font-size: 18px;
+        }
+        #messaje{
+            font-family: 'Courier New', Courier, monospace;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        footer{
+            border-top: 1px solid white;
+            position: absolute;
+            bottom: 0;
+            height: 70px;
+            width: 80%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        .form-group{
+            width: 80%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-group">
+        <div class="mb-3">
+            <label for="nr">Introduceti anul înființării companiei Google:</label>
+            <input type="text" name="nr" id="nr">
+            <div id="messaje"></div>
+        </div>
+        <button onclick="verifica()">Verifica</button>
+    </div>
+    <footer>
+        Autor: Pădure Gheorghe
+    </footer>
+    <script>
+        const verifica = () => {
+            let nr = document.getElementById('nr').value
+            const message = document.getElementById('messaje')
+            if(nr == 7)
+                message.textContent = 'Felicitări, următorul indiciu se află la autorul acestui site'
+            else
+                message.textContent = "Mai incearcă!"
+        }
+    </script>
+</body>
+
+</html>
